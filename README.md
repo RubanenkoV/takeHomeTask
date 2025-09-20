@@ -98,7 +98,7 @@ kubectl port-forward service/items-api-service 8000:8000
 curl http://localhost:8000/items
 ```
 
-### 4. Fly.io Deployment
+### 5. Fly.io Deployment
 
 ```bash
 # Install flyctl
