@@ -98,6 +98,28 @@ kubectl port-forward service/items-api-service 8000:8000
 curl http://localhost:8000/items
 ```
 
+### 4. Fly.io Deployment
+
+```bash
+# Install flyctl
+curl -L https://fly.io/install.sh | sh
+
+# Login to Fly.io
+flyctl auth login
+
+# Deploy from GitHub
+flyctl launch --from-github RubanenkoV/takeHomeTask
+```
+
+Alternatively, it can be deployed directly from the fly.io dashboard.
+
+Live API: https://itemsapi.fly.dev/
+API Docs: https://itemsapi.fly.dev/docs
+
+Testing the deployed API:
+```bash
+curl -X POST -H "Content-Type: application/json" -d '{"name": "deployed-item"}' https://itempsapi.fly.dev/items
+```
 ## Testing
 
 ```bash
